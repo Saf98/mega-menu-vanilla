@@ -45,8 +45,29 @@ ul, li {
   position: relative;
 }
 
+.all-categories {
+  background-color: salmon;
+  width: 100%;
+  padding: 10px;
+}
+
+ul.menu {
+  background-color: #777;
+  padding: 4px;
+}
+
+li.menu-item {
+  background-color: #fff;
+  padding: 20px;
+}
+
 .categories {
-  background-color: #43464a10;
+  background-color: #db7093;
+  margin-right: 3px;
+}
+
+.hide-unpop {
+  display: none;
 }
 
 .border-right {
@@ -64,15 +85,11 @@ ul, li {
 }
 
 .col {
-  flex: 1;
+  flex: 100%;
 }
 
 .col-s {
-  flex-basis: 30%;
-}
-
-.col-m {
-  flex-basis: 77%;
+  flex: 0 33%;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */

@@ -1,6 +1,7 @@
 const data = [
   {
     title: "Electronics",
+    id: 1,
     subMenu: [
       {
         title: "smartphones",
@@ -21,6 +22,7 @@ const data = [
   },
   {
     title: "Consoles",
+    id: 2,
     subMenu: [
       {
         title: "Playstation",
@@ -33,10 +35,30 @@ const data = [
     ],
   },
 ];
-const menuItems = document.getElementById("group");
 
-const categories = data.map((element) => {
-  return `<li><a href="#">${element.title}</a></li>`;
+const menuItems = document.getElementById("categories");
+const subMenuElement = document.getElementById("submenu");
+
+const categories = data
+  .map((element) => {
+    return `<li class="menu-item" key=${element.id}><a href="#">${element.title}</a></li>`;
+  })
+  .join("");
+
+const subcategories = data.filter((element) => {
+  if (element.title === `test`) {
+    const sub = element.subMenu
+      .map((subElement) => {
+        return `<li class="menu-item" key=${subElement?.id}><a href="#">${subElement.title}</a></li>`;
+      })
+      .join("");
+    subMenuElement.insertAdjacentHTML("afterbegin", sub);
+  }
 });
-menuItems.insertAdjacentHTML("afterend", categories);
-console.log(menuItems);
+
+const menuItemsElement = menuItems.insertAdjacentHTML("afterbegin", categories);
+
+menuItems.addEventListener("click", (event) => {
+  console.log(event.target.childNodes[0].textContent);
+  //listen for dynamic inner text
+});

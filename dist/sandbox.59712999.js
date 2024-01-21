@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"beUwC":[function(require,module,exports) {
+})({"HBA8c":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -226,7 +226,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== "undefined") {
     var hostname = getHostname();
     var port = getPort();
-    var protocol = HMR_SECURE || location.protocol == "https:" && !/localhost|127.0.0.1|0.0.0.0/.test(hostname) ? "wss" : "ws";
+    var protocol = HMR_SECURE || location.protocol == "https:" && ![
+        "localhost",
+        "127.0.0.1",
+        "0.0.0.0"
+    ].includes(hostname) ? "wss" : "ws";
     var ws;
     try {
         ws = new WebSocket(protocol + "://" + hostname + (port ? ":" + port : "") + "/");
@@ -576,6 +580,6 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"4M6V8":[function(require,module,exports) {
 
-},{}]},["beUwC","4M6V8"], "4M6V8", "parcelRequirebaba")
+},{}]},["HBA8c","4M6V8"], "4M6V8", "parcelRequirebaba")
 
 //# sourceMappingURL=sandbox.59712999.js.map

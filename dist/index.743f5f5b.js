@@ -1,3 +1,0 @@
-const e=document.getElementById("categories"),t=[{title:"Electronics",id:1,subMenu:[{title:"smartphones",subMenu:[{title:"iPhone"},{title:"Samsung"}]}]},{title:"Consoles",id:2,subMenu:[{title:"Playstation",subMenu:[{title:"PS4"},{title:"PS5"}]},{title:"Xbox",subMenu:[{title:"Xbox 360"},{title:"One X"}]}]}].map(e=>{if(e?.subMenu){let t=e.subMenu.map(e=>`<li key=${e?.id}><a href="#">${e.title}</a></li>`).join("");console.log("Submenu exists");let n=document.getElementById("submenu");n.insertAdjacentHTML("afterend",t)}return`<li key=${e.id}><a href="#">${e.title}</a></li>`}).join("");e.insertAdjacentHTML("afterend",t),console.log(e);//# sourceMappingURL=index.743f5f5b.js.map
-
-//# sourceMappingURL=index.743f5f5b.js.map

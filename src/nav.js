@@ -94,4 +94,5 @@ subMenuElement.addEventListener("click", (event) => {
   let title = event.target.childNodes[0].textContent;
   renderListChild(title);
   //listen for dynamic inner text of next array subcategories
+  //pass to renderlistchild to filter
 });

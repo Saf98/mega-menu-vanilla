@@ -46,19 +46,12 @@ li {
 
 .menu-items {
   position: relative;
-  /* background-color: #43464a; */
-  /* width: 370px; */
 }
 
 .all-categories {
-  background-color: salmon;
+  background-color: #000000;
   padding: 10px;
   width: 100%;
-}
-
-ul.menu {
-  background-color: #777777;
-  padding: 4px;
 }
 
 li.menu-item {
@@ -67,7 +60,7 @@ li.menu-item {
 }
 
 .categories {
-  background-color: palevioletred;
+  background-color: red;
   margin-right: 3px;
 }
 

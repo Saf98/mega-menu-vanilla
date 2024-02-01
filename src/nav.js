@@ -7,16 +7,31 @@ const data = [
         title: "smartphones",
         subMenu: [
           {
-            title: "iPhone",
+            title: "iPhone 13 Pro",
           },
           {
-            title: "Samsung",
+            title: "iPhone 15 Pro Max",
+          },
+          {
+            title: "Samsung S23",
+          },
+          {
+            title: "Pixel 8 Pro",
+          },
+          {
+            title: "Motorola Razr 40 Ultra",
           },
         ],
       },
       {
         title: "laptops",
-        subMenu: [{ title: "MacBook Pro" }, { title: "Chromebook" }],
+        subMenu: [
+          { title: "MacBook Pro" },
+          { title: "Chromebook" },
+          { title: "Lenovo IdeaPad 3i" },
+          { title: "Surface Laptop Go" },
+          { title: "ASUS Zenbook" },
+        ],
       },
     ],
   },
@@ -26,11 +41,21 @@ const data = [
     subMenu: [
       {
         title: "Playstation",
-        subMenu: [{ title: "PS4" }, { title: "PS5" }],
+        subMenu: [
+          { title: "PS4" },
+          { title: "PS5" },
+          { title: "PS4 Slim" },
+          { title: "PS5 Slim" },
+        ],
       },
       {
         title: "Xbox",
-        subMenu: [{ title: "Xbox 360" }, { title: "One X" }],
+        subMenu: [
+          { title: "xbox 360" },
+          { title: "seies X" },
+          { title: "series S" },
+          { title: "one" },
+        ],
       },
     ],
   },
@@ -50,6 +75,7 @@ const renderList = (event) => {
   //filter array by string: event title of categories
   //then iterate through subMenu array and return it
   subMenuElement.replaceChildren();
+  subChildElement.replaceChildren();
 
   data.filter((element) => {
     if (element.title === `${event}`) {

@@ -51,10 +51,10 @@ const data = [
       {
         title: "Xbox",
         subMenu: [
-          { title: "xbox 360" },
-          { title: "seies X" },
-          { title: "series S" },
-          { title: "one" },
+          { title: "Xbox 360" },
+          { title: "Series X" },
+          { title: "Series S" },
+          { title: "One" },
         ],
       },
     ],
@@ -67,7 +67,7 @@ const subChildElement = document.getElementById("children");
 
 const categories = data
   .map((element) => {
-    return `<li class="menu-item" key=${element.id}><a href="#">${element.title}</a></li>`;
+    return `<li class="menu-item arrow" key=${element.id}><a>${element.title}</a></li>`;
   })
   .join("");
 
@@ -81,7 +81,7 @@ const renderList = (event) => {
     if (element.title === `${event}`) {
       const subcategory = element.subMenu
         .map((subElement) => {
-          return `<li class="menu-item" key=${subElement?.id}><a href="#">${subElement.title}</a></li>`;
+          return `<li class="menu-item arrow" key=${subElement?.id}><a>${subElement.title}</a></li>`;
         })
         .join("");
       subMenuElement.insertAdjacentHTML("afterbegin", subcategory);
@@ -99,7 +99,7 @@ const renderListChild = (event) => {
       if (subElement.title === `${event}`) {
         const subChild = subElement?.subMenu
           .map((subChildren) => {
-            return `<li class="menu-item" key=${subChildren?.id}><a href="#">${subChildren.title}</a></li>`;
+            return `<li class="menu-item arrow" key=${subChildren?.id}><a>${subChildren.title}</a></li>`;
           })
           .join("");
         subChildElement.insertAdjacentHTML("afterbegin", subChild);

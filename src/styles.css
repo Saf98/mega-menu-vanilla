@@ -103,7 +103,7 @@ li.menu-item:hover {
   flex-basis: 33%;
 }
 
-.arrow::after {
+.arrow:hover::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -115,4 +115,8 @@ li.menu-item:hover {
   border-right: 0.32em solid transparent;
   border-left: 0.32em solid transparent;
   rotate: 270deg;
+}
+
+.active {
+  background-color: #bebebe !important;
 }

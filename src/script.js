@@ -1,7 +1,6 @@
 const data = [
   {
     title: "Electronics",
-    id: 1,
     subMenu: [
       {
         title: "smartphones",
@@ -37,7 +36,6 @@ const data = [
   },
   {
     title: "Consoles",
-    id: 2,
     subMenu: [
       {
         title: "Playstation",
@@ -65,9 +63,30 @@ const menuItems = document.getElementById("categories");
 const subMenuElement = document.getElementById("submenu");
 const subChildElement = document.getElementById("children");
 
+function uuidv4() {
+  return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, (c) =>
+    (
+      c ^
+      (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+    ).toString(16),
+  );
+}
+
+function selectedStyle() {
+  const navLinks = document.querySelectorAll(".menu-item");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+      });
+      link.classList.add("active");
+    });
+  });
+}
+
 const categories = data
   .map((element) => {
-    return `<li class="menu-item arrow" key=${element.id}><a>${element.title}</a></li>`;
+    return `<li class="menu-item arrow" key=${uuidv4()}><a>${element.title}</a></li>`;
   })
   .join("");
 
@@ -81,7 +100,7 @@ const renderList = (event) => {
     if (element.title === `${event}`) {
       const subcategory = element.subMenu
         .map((subElement) => {
-          return `<li class="menu-item arrow" key=${subElement?.id}><a>${subElement.title}</a></li>`;
+          return `<li class="menu-item arrow" key=${uuidv4()}><a>${subElement.title}</a></li>`;
         })
         .join("");
       subMenuElement.insertAdjacentHTML("afterbegin", subcategory);
@@ -99,7 +118,7 @@ const renderListChild = (event) => {
       if (subElement.title === `${event}`) {
         const subChild = subElement?.subMenu
           .map((subChildren) => {
-            return `<li class="menu-item arrow" key=${subChildren?.id}><a>${subChildren.title}</a></li>`;
+            return `<li class="menu-item arrow" key=${uuidv4()}><a>${subChildren.title}</a></li>`;
           })
           .join("");
         subChildElement.insertAdjacentHTML("afterbegin", subChild);
@@ -114,6 +133,7 @@ menuItems.addEventListener("click", (event) => {
   let title = event.target.childNodes[0].textContent;
   renderList(title);
   //listen for dynamic inner text
+  selectedStyle();
 });
 
 subMenuElement.addEventListener("click", (event) => {
@@ -121,4 +141,5 @@ subMenuElement.addEventListener("click", (event) => {
   renderListChild(title);
   //listen for dynamic inner text of next array subcategories
   //pass to renderlistchild to filter
+  selectedStyle();
 });

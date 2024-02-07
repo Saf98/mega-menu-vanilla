@@ -16,6 +16,7 @@
     "javascript"
   ],
   "dependencies": {
-    "eslint-config-prettier": "9.1.0"
+    "eslint-config-prettier": "9.1.0",
+    "uuid": "^9.0.1"
   }
 }

@@ -94,16 +94,16 @@ li.menu-item:hover {
 .col {
   flex-grow: 1;
   flex-shrink: 1;
-  flex-basis: 100%;
+  flex-basis: 99.9%;
 }
 
 .col-s {
   flex-grow: 0;
   flex-shrink: 1;
-  flex-basis: 33%;
+  flex-basis: 33.3%;
 }
 
-.arrow::after {
+.arrow:hover::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -115,4 +115,8 @@ li.menu-item:hover {
   border-right: 0.32em solid transparent;
   border-left: 0.32em solid transparent;
   rotate: 270deg;
+}
+
+.active {
+  background-color: #bebebe !important;
 }

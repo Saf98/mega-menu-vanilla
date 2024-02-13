@@ -91,8 +91,6 @@ const categories = data
   .join("");
 
 const renderList = (event) => {
-  //filter array by string: event title of categories
-  //then iterate through subMenu array and return it
   subMenuElement.replaceChildren();
   subChildElement.replaceChildren();
 
@@ -109,8 +107,6 @@ const renderList = (event) => {
 };
 
 const renderListChild = (event) => {
-  //filter array by string: event title of categories
-  //then iterate through subMenu array and return it
   subChildElement.replaceChildren();
 
   data.map((element) => {
@@ -132,14 +128,11 @@ const menuItemsElement = menuItems.insertAdjacentHTML("afterbegin", categories);
 menuItems.addEventListener("click", (event) => {
   let title = event.target.childNodes[0].textContent;
   renderList(title);
-  //listen for dynamic inner text
   selectedStyle();
 });
 
 subMenuElement.addEventListener("click", (event) => {
   let title = event.target.childNodes[0].textContent;
   renderListChild(title);
-  //listen for dynamic inner text of next array subcategories
-  //pass to renderlistchild to filter
   selectedStyle();
 });

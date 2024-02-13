@@ -1,1 +1,7 @@
-./.parcel-cache
+# Parcel related files
+dist/
+.parcel-cache/
+
+# Dependency directories
+node_modules/
+jspm_packages/

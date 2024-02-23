@@ -1,0 +1,148 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: sans-serif;
+  font-style: normal;
+  background-color: #dadada;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  padding: 14.5px 14px;
+}
+
+.menu-items {
+  position: relative;
+  background-color: #ffffff;
+}
+
+.all-categories {
+  background-color: #ffffff;
+  width: 100%;
+}
+
+li.menu-item {
+  position: relative;
+  background-color: #ffffff;
+  padding: 20px;
+  font-weight: bold;
+}
+
+li.menu-item:not(:first-child) {
+  border-top: 2px solid rgb(211, 211, 211);
+}
+
+li.menu-item:hover {
+  background-color: #b8b8b8;
+}
+
+.categories {
+  height: 100vh;
+}
+.categories:not(:first-child) {
+  border-left: 2px solid rgb(211, 211, 211);
+}
+
+.hide-unpop {
+  display: none;
+}
+
+.mega-menu {
+  display: block;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.col {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 99.9%;
+}
+
+.col-s {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 33.3%;
+}
+
+.arrow:hover::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+  vertical-align: 0.09em;
+  border-top: 0.42em solid;
+  border-right: 0.32em solid transparent;
+  border-left: 0.32em solid transparent;
+  rotate: 270deg;
+}
+
+.selected {
+  background-color: #bebebe !important;
+}
+
+.mobile-items__mobile--group.active {
+  display: none;
+}
+
+.menu-items__desktop {
+  display: block;
+}
+
+.select {
+  border: 2px solid olivedrab;
+}
+
+.menu-items__mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-items__desktop {
+    display: none;
+  }
+
+  .menu-items__mobile {
+    display: block;
+  }
+}

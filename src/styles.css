@@ -66,7 +66,7 @@ li.menu-item:not(:first-child) {
 }
 
 li.menu-item:hover {
-  background-color: #fafafa;
+  background-color: #b8b8b8;
 }
 
 .categories {
@@ -117,6 +117,32 @@ li.menu-item:hover {
   rotate: 270deg;
 }
 
-.active {
+.selected {
   background-color: #bebebe !important;
+}
+
+.mobile-items__mobile--group.active {
+  display: none;
+}
+
+.menu-items__desktop {
+  display: block;
+}
+
+.select {
+  border: 2px solid olivedrab;
+}
+
+.menu-items__mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-items__desktop {
+    display: none;
+  }
+
+  .menu-items__mobile {
+    display: block;
+  }
 }

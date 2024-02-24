@@ -117,8 +117,8 @@ const categoriesMobile = data
         <li id="menu-item" class="menu-item arrow" key=${uuidv4()}><a>${element.title}</a></li>
         <li id="menu-item" class="menu-item">
           ${element.subMenu
-            .map((subElement) => {
-              return `<li id="menu-item" class="menu-item" key=${uuidv4()}>
+          .map((subElement) => {
+            return `<li id="menu-item" class="menu-item" key=${uuidv4()}>
               <a>${subElement.title}</a>
               </li>
               ${subElement.subMenu
@@ -129,8 +129,8 @@ const categoriesMobile = data
                 })
                 .join("")}
               `;
-            })
-            .join("")}
+          })
+          .join("")}
         </li>`;
     }
   })
@@ -196,12 +196,9 @@ const navLinksEls = document.querySelectorAll(".mobile-items__mobile--group");
 
 navLinksEls.forEach((link, i) => {
   link.addEventListener("click", (e) => {
-    const activeLink = document.querySelector(
-      ".mobile-items__mobile--group .active",
-    );
-    activeLink
-      ? link.lastElementChild.classList.remove("active")
-      : link.lastElementChild.classList.add("active", "select");
+    const linkGroup = link.querySelector(".mobile-items__mobile--group");
+
+    console.log(linkGroup.classList.toggle("active"))
   });
 });
 

@@ -188,18 +188,28 @@ subMenuElement.addEventListener("click", (event) => {
   selectedStyle();
 });
 
-// menuItemsMobile.addEventListener("click", (event) => {
-//   console.log(event.target.childNodes);
-// });
+nestedMobileMenu = () => {
+  const subMenuHeadings = document.querySelectorAll(".mobile-items-heading");
 
-const navLinksEls = document.querySelectorAll(".mobile-items__mobile--group");
-
-navLinksEls.forEach((link, i) => {
-  link.addEventListener("click", (e) => {
-    const linkGroup = link.querySelector(".mobile-items__mobile--group");
-
-    console.log(linkGroup.classList.toggle("active"))
+  subMenuHeadings.forEach((subMenuHeading) => {
+    subMenuHeading.classList.add("collapsed");
+    subMenuHeading.nextElementSibling.style.display = "none";
+    subMenuHeading.addEventListener("click", (event) => {
+      event.preventDefault();
+      const subMenuList = event.target.nextElementSibling;
+      if (subMenuList.style.display === "none") {
+        subMenuHeading.classList.remove("collapsed");
+        subMenuHeading.classList.add("expanded");
+        subMenuList.style.display = "block";
+      } else {
+        subMenuHeading.classList.remove("expanded");
+        subMenuHeading.classList.add("collapsed");
+        subMenuList.style.display = "none";
+      }
+      event.stopPropagation();
+    });
   });
-});
+};
 
-// console.log(navLinksEls);
+nestedMobileMenu();
+

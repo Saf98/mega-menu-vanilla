@@ -121,10 +121,6 @@ li.menu-item:hover {
   background-color: #bebebe !important;
 }
 
-.mobile-items__mobile--group.active {
-  display: none;
-}
-
 .menu-items__desktop {
   display: block;
 }
@@ -144,5 +140,45 @@ li.menu-item:hover {
 
   .menu-items__mobile {
     display: block;
+  }
+
+  .mobile-items-heading {
+    cursor: pointer;
+  }
+  
+  ul.mobile-items {
+    list-style: none;
+  }
+
+  li.menu-item:hover {
+    background-color: #ffffff;
+  }
+   
+  div.mobile-items-heading.collapsed:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    vertical-align: 0.09em;
+    border-top: 0.42em solid;
+    border-right: 0.32em solid transparent;
+    border-left: 0.32em solid transparent;
+    rotate: 270deg;
+  }
+  
+  div.mobile-items-heading.expanded::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    top: 20px;
+    vertical-align: 0.09em;
+    border-top: 0.42em solid;
+    border-right: 0.32em solid transparent;
+    border-left: 0.32em solid transparent;
+    rotate: 360deg;
   }
 }

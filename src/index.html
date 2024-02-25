@@ -1,56 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Mega Menu Vanilla</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="menu-items__mobile">
-          <ul class="mobile-items__mobile--group">
-            <li class="menu-item">Parent ></li>
-              <ul class="mobile-items__mobile--group active">
-                <li class="menu-item">Child-1</li>
-                <li class="menu-item">Child-2</li>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Mega Menu Vanilla</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="menu-items__mobile">
+      <ul class="mobile-items">
+        <li class="menu-item">
+          <div class="mobile-items-heading">Grand Parent</div>
+          <ul class="mobile-items-subitems">
+            <li class="menu-item">
+              <div class="mobile-items-heading">Parent</div>
+              <ul class="mobile-items-subitems">
+                <li class="menu-item">
+                  <div class="mobile-items-heading">Children</div>
+                  <ul class="mobile-items-subitems">
+                    <li class="menu-item">
+                      <div class="mobile-items-heading">Parent</div>
+                      <ul class="mobile-items-subitems">
+                        <li class="menu-item">
+                          <a href="">Grand Child 1</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="">Grand Child 2</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
               </ul>
-          </ul>
-          <ul class="mobile-items__mobile--group">
-            <li class="menu-item">Parent 2 ></li>
-              <ul class="mobile-items__mobile--group active">
-                <li class="menu-item">Child-3</li>
-                <li class="menu-item">Child-4</li>
-                <li class="menu-item">Child-5</li>
-              </ul>
-          </ul>
-          <ul class="mobile-items__mobile--group">
-            <li class="menu-item">Parent 3 ></li>
-              <ul class="mobile-items__mobile--group">
-              </ul>
-          </ul>
-      </div>
-      <ul class="menu-items__desktop">
-        <div class="all-categories">
-          <li class="category row">
-            <div class="categories col col-s">
-              <ul class="menu" id="categories">
-              </ul>
-            </div>
-            <div class="categories col col-s">
-              <ul class="menu" id="submenu">
-              </ul>
-            </div>
-            <div class="categories col col-s">
-              <ul class="menu" id="children">
-              </ul>
-            </div>
-          </li>
-        </div>
-      </ul>
-      </div>
     </div>
-  </body>
+  </div>
+  <ul class="menu-items__desktop">
+    <div class="all-categories">
+      <li class="category row">
+        <div class="categories col col-s">
+          <ul class="menu" id="categories">
+          </ul>
+        </div>
+        <div class="categories col col-s">
+          <ul class="menu" id="submenu">
+          </ul>
+        </div>
+        <div class="categories col col-s">
+          <ul class="menu" id="children">
+          </ul>
+        </div>
+      </li>
+    </div>
+  </ul>
+  </div>
+  </div>
+</body>
+
 </html>

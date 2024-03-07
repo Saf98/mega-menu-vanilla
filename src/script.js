@@ -6,30 +6,30 @@ const data = [
         title: "smartphones",
         subMenu: [
           {
-            title: "iPhone 13 Pro",
+            title: "iPhone 13 Pro", subMenu: []
           },
           {
-            title: "iPhone 15 Pro Max",
+            title: "iPhone 15 Pro Max", subMenu: []
           },
           {
-            title: "Samsung S23",
+            title: "Samsung S23", subMenu: []
           },
           {
-            title: "Pixel 8 Pro",
+            title: "Pixel 8 Pro", subMenu: []
           },
           {
-            title: "Motorola Razr 40 Ultra",
+            title: "Motorola Razr 40 Ultra", subMenu: []
           },
         ],
       },
       {
         title: "laptops",
         subMenu: [
-          { title: "MacBook Pro" },
-          { title: "Chromebook" },
-          { title: "Lenovo IdeaPad 3i" },
-          { title: "Surface Laptop Go" },
-          { title: "ASUS Zenbook" },
+          { title: "MacBook Pro", subMenu: []}, 
+          { title: "Chromebook", subMenu: [] },
+          { title: "Lenovo IdeaPad 3i", subMenu: [] },
+          { title: "Surface Laptop Go", subMenu: [] },
+          { title: "ASUS Zenbook", subMenu: [] },
         ],
       },
     ],
@@ -40,19 +40,19 @@ const data = [
       {
         title: "Playstation",
         subMenu: [
-          { title: "PS4" },
-          { title: "PS5" },
-          { title: "PS4 Slim" },
-          { title: "PS5 Slim" },
+          { title: "PS4",subMenu: [] },
+          { title: "PS5", subMenu: [] },
+          { title: "PS4 Slim", subMenu: [] },
+          { title: "PS5 Slim", subMenu: [] },
         ],
       },
       {
         title: "Xbox",
         subMenu: [
-          { title: "Xbox 360" },
-          { title: "Series X" },
-          { title: "Series S" },
-          { title: "One" },
+          { title: "Xbox 360", subMenu: [] },
+          { title: "Series X",subMenu: [] },
+          { title: "Series S", subMenu: [] },
+          { title: "One", subMenu: [] },
         ],
       },
     ],
@@ -62,7 +62,7 @@ const data = [
 const menuItems = document.getElementById("categories");
 const subMenuElement = document.getElementById("submenu");
 const subChildElement = document.getElementById("children");
-const menuItemsMobile = document.getElementById("categories-mobile");
+const menuItemsMobile = document.querySelector(".menu-items__mobile");
 const allCategoriesMobile = document.querySelector(".all-categories-mobile");
 
 function uuidv4() {
@@ -108,34 +108,6 @@ data.filter((element) => {
   }
 });
 
-//mobile categories
-
-const categoriesMobile = data
-  .map((element) => {
-    if (element.subMenu?.length > 0) {
-      return `
-        <li id="menu-item" class="menu-item arrow" key=${uuidv4()}><a>${element.title}</a></li>
-        <li id="menu-item" class="menu-item">
-          ${element.subMenu
-          .map((subElement) => {
-            return `<li id="menu-item" class="menu-item" key=${uuidv4()}>
-              <a>${subElement.title}</a>
-              </li>
-              ${subElement.subMenu
-                .map((subChildren) => {
-                  return `<li id="menu-item" class="menu-item" key=${uuidv4()}>
-                  <a>${subChildren.title}</a>
-                  </li>`;
-                })
-                .join("")}
-              `;
-          })
-          .join("")}
-        </li>`;
-    }
-  })
-  .join("");
-
 const renderList = (event) => {
   subMenuElement.replaceChildren();
   subChildElement.replaceChildren();
@@ -170,11 +142,6 @@ const renderListChild = (event) => {
 };
 
 const menuItemsElement = menuItems.insertAdjacentHTML("afterbegin", categories);
-//mobile render
-// const menuItemsMobileElement = menuItemsMobile.insertAdjacentHTML(
-//   "afterbegin",
-//   categoriesMobile,
-// );
 
 menuItems.addEventListener("click", (event) => {
   let title = event.target.childNodes[0].textContent;
@@ -187,6 +154,32 @@ subMenuElement.addEventListener("click", (event) => {
   renderListChild(title);
   selectedStyle();
 });
+
+//mobile categories
+
+function convertListToHtml(list) {
+  let html = `<ul class="mobile-items-subitems">`;
+
+  for (item of list) {
+
+    if (item?.subMenu.length === 0) {
+      html += `<li class="menu-item">${item?.title}</li>`;
+
+    } else {
+      html += `<li class="menu-item">
+                <div class="mobile-items-heading">${item?.title}</div>   
+                ${convertListToHtml(item?.subMenu)}
+              </li>`;
+    }
+  }
+
+  return html + `</ul>`;
+}
+
+const menuItemsMobileElement = menuItemsMobile.insertAdjacentHTML(
+  "afterbegin",
+  convertListToHtml(data)
+);
 
 nestedMobileMenu = () => {
   const subMenuHeadings = document.querySelectorAll(".mobile-items-heading");

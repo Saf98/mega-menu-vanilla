@@ -154,7 +154,7 @@ li.menu-item:hover {
     background-color: #ffffff;
   }
    
-  div.mobile-items-heading.collapsed:after {
+  /* div.mobile-items-heading.collapsed:after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -165,7 +165,7 @@ li.menu-item:hover {
     border-top: 0.42em solid;
     border-right: 0.32em solid transparent;
     border-left: 0.32em solid transparent;
-    rotate: 270deg;
+    rotate: 180deg;
   }
   
   div.mobile-items-heading.expanded::after {
@@ -180,5 +180,5 @@ li.menu-item:hover {
     border-right: 0.32em solid transparent;
     border-left: 0.32em solid transparent;
     rotate: 360deg;
-  }
+  } */
 }

@@ -62,7 +62,7 @@ li.menu-item {
 }
 
 li.menu-item:not(:first-child) {
-  border-top: 2px solid rgb(211, 211, 211);
+  border-top: 1px solid rgb(219 219 219);
 }
 
 li.menu-item:hover {
@@ -73,7 +73,7 @@ li.menu-item:hover {
   height: 100vh;
 }
 .categories:not(:first-child) {
-  border-left: 2px solid rgb(211, 211, 211);
+  border-left: 1px solid rgb(219 219 219);
 }
 
 .hide-unpop {
@@ -107,7 +107,7 @@ li.menu-item:hover {
   content: "";
   display: inline-block;
   position: absolute;
-  right: 0px;
+  right: 30px;
   bottom: 0px;
   top: 0px;
   vertical-align: 0.09em;
@@ -152,33 +152,5 @@ li.menu-item:hover {
 
   li.menu-item:hover {
     background-color: #ffffff;
-  }
-   
-  /* div.mobile-items-heading.collapsed:after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    top: 0px;
-    vertical-align: 0.09em;
-    border-top: 0.42em solid;
-    border-right: 0.32em solid transparent;
-    border-left: 0.32em solid transparent;
-    rotate: 180deg;
-  }
-  
-  div.mobile-items-heading.expanded::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    top: 20px;
-    vertical-align: 0.09em;
-    border-top: 0.42em solid;
-    border-right: 0.32em solid transparent;
-    border-left: 0.32em solid transparent;
-    rotate: 360deg;
-  } */
+  } 
 }

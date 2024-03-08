@@ -25,7 +25,7 @@ const data = [
       {
         title: "laptops",
         subMenu: [
-          { title: "MacBook Pro", subMenu: []}, 
+          { title: "MacBook Pro", subMenu: [] },
           { title: "Chromebook", subMenu: [] },
           { title: "Lenovo IdeaPad 3i", subMenu: [] },
           { title: "Surface Laptop Go", subMenu: [] },
@@ -40,7 +40,7 @@ const data = [
       {
         title: "Playstation",
         subMenu: [
-          { title: "PS4",subMenu: [] },
+          { title: "PS4", subMenu: [] },
           { title: "PS5", subMenu: [] },
           { title: "PS4 Slim", subMenu: [] },
           { title: "PS5 Slim", subMenu: [] },
@@ -50,7 +50,7 @@ const data = [
         title: "Xbox",
         subMenu: [
           { title: "Xbox 360", subMenu: [] },
-          { title: "Series X",subMenu: [] },
+          { title: "Series X", subMenu: [] },
           { title: "Series S", subMenu: [] },
           { title: "One", subMenu: [] },
         ],
@@ -155,19 +155,17 @@ subMenuElement.addEventListener("click", (event) => {
   selectedStyle();
 });
 
-//mobile categories
-
 function convertListToHtml(list) {
   let html = `<ul class="mobile-items-subitems">`;
 
   for (item of list) {
 
     if (item?.subMenu.length === 0) {
-      html += `<li class="menu-item">${item?.title}</li>`;
+      html += `<li class="menu-item" key="${uuidv4()}">${item?.title}</li>`;
 
     } else {
-      html += `<li class="menu-item">
-                <div class="mobile-items-heading">${item?.title}</div>   
+      html += `<li class="menu-item" key="${uuidv4()}">
+                <div class="mobile-items-heading" key="${uuidv4()}">${item?.title}</div>   
                 ${convertListToHtml(item?.subMenu)}
               </li>`;
     }
@@ -189,6 +187,7 @@ nestedMobileMenu = () => {
     subMenuHeading.nextElementSibling.style.display = "none";
     subMenuHeading.addEventListener("click", (event) => {
       event.preventDefault();
+      
       const subMenuList = event.target.nextElementSibling;
       if (subMenuList.style.display === "none") {
         subMenuHeading.classList.remove("collapsed");
